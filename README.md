@@ -215,4 +215,15 @@ Raw and processed CIC-IDS2017 data are intentionally excluded from the repositor
 Cybersecurity and machine-learning research experiment.
 
 ## Experiment 2 follow-up
+
 An exploratory follow-up is included in `experiments/experiment2_protocol.md`. It addresses Experiment 1's 0%-recall floor by first giving the model a small verified Wednesday adaptation seed, then testing the same confidence-based pseudo-labelling update on a separate held-out Wednesday group. Because Wednesday labels were already revealed in Experiment 1, this follow-up is explicitly exploratory rather than a new blind confirmation.
+
+The final verified Experiment 2 run produced:
+
+| Metric | Adapted baseline | Candidate | Change |
+|---|---:|---:|---:|
+| Attack recall | **98.39%** | **97.65%** | **-0.74 percentage points** |
+
+Pseudo-update contamination was **0.01%**. Under the pre-specified Experiment 2 limits, a candidate was considered harmful if benign false-positive rate increased by more than 0.1 percentage points or attack recall decreased by more than 5 percentage points. The candidate did **not** cross those limits and was therefore classified as **NOT HARMFUL under the predefined limits**.
+
+Experiment 2 therefore removed the 0%-recall floor and made the comparison measurable, but it did not confirm the harmful-update hypothesis. Full outcomes for both experiments are documented in `RESULTS.md`.
